@@ -404,3 +404,63 @@ const props = defineProps<Props>()  // Assign to variable if needed
    - `@vitejs/plugin-vue`: `^6.0.4` (not 11.x)
    - `vite`: `^6.0.11`
    - `vue`: `^3.5.13`
+   - `@vueuse/core`: `^14.2.0`
+
+---
+
+## VueUse Integration
+
+This template includes [VueUse](https://vueuse.org/) - a collection of essential Vue Composition utilities.
+
+### Installation
+
+```bash
+yarn add @vueuse/core
+```
+
+### Common VueUse APIs
+
+The template includes examples in `src/composables/useVueUseExample.ts`:
+
+```ts
+import {
+  useStorage,        // Reactive localStorage
+  useWindowSize,     // Window dimensions
+  useMouse,          // Mouse position
+  usePreferredDark,  // System dark mode preference
+  useNow             // Reactive current time
+} from '@vueuse/core'
+```
+
+### Usage Example
+
+```vue
+<script setup lang="ts">
+import { useStorage } from '@vueuse/core'
+
+// Persisted to localStorage automatically
+const count = useStorage('count', 0)
+</script>
+
+<template>
+  <button @click="count++">{{ count }}</button>
+</template>
+```
+
+### Popular VueUse Functions
+
+| Function | Description |
+|----------|-------------|
+| `useStorage` | Reactive localStorage/sessionStorage |
+| `useWindowSize` | Window width/height |
+| `useMouse` | Mouse position tracking |
+| `usePreferredDark` | System dark mode preference |
+| `useNow` | Reactive current date/time |
+| `useClipboard` | Clipboard API |
+| `useFetch` | Reactive fetch with abort |
+| `useElementSize` | Element size observation |
+| `useScroll` | Scroll position |
+| `useIntersectionObserver` | Intersection Observer |
+
+For complete documentation, see [vueuse.org](https://vueuse.org/).
+

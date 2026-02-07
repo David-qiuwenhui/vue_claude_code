@@ -6,6 +6,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178c6?logo=typescript)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.0-646cff?logo=vite)](https://vitejs.dev/)
 [![Vitest](https://img.shields.io/badge/Vitest-2.0-6e9f18?logo=vitest)](https://vitest.dev/)
+[![VueUse](https://img.shields.io/badge/VueUse-14.2-42b883?logo=vue.js)](https://vueuse.org/)
 
 A well-structured, production-ready Vue 3 template designed for modern web development with AI assistance. This template comes pre-configured with TypeScript, strict type checking, comprehensive testing setup, and opinionated tooling to accelerate your development workflow.
 
@@ -23,6 +24,7 @@ npx skills add vuejs-ai/skills
 - TypeScript with strictest type checking
 - Vite for lightning-fast HMR and optimized builds
 - Vitest with jsdom for unit testing
+- VueUse for essential Composition utilities
 - ESLint + Prettier for code quality and formatting
 - Path aliases (`@/*` maps to `./src/*`)
 - Pre-configured test setup with @testing-library/vue
@@ -137,3 +139,4 @@ Vitest is configured with:
 - [Vue.js](https://vuejs.org/)
 - [Vite](https://vitejs.dev/)
 - [Vitest](https://vitest.dev/)
+- [VueUse](https://vueuse.org/)

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
+import VueUseDemo from './components/VueUseDemo.vue'
 
 const count = ref(0)
 const doubledCount = computed(() => count.value * 2)
@@ -15,6 +16,8 @@ const doubledCount = computed(() => count.value * 2)
 
     <main class="app-main">
       <HelloWorld v-model:modelValue="count" :doubled="doubledCount" />
+
+      <VueUseDemo />
 
       <section class="features">
         <div class="feature-card">
@@ -32,6 +35,10 @@ const doubledCount = computed(() => count.value * 2)
         <div class="feature-card">
           <h3>Vitest</h3>
           <p>Native Vitest unit testing</p>
+        </div>
+        <div class="feature-card">
+          <h3>VueUse</h3>
+          <p>Essential Vue Composition Utilities</p>
         </div>
       </section>
     </main>
