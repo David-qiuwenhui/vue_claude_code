@@ -23,7 +23,7 @@
     "noUncheckedSideEffectImports": true,
 
     /* Path mapping */
-    "baseUrl": ".",
+    // "baseUrl": ".", // 已弃用，见 https://aka.ms/ts6
     "paths": {
       "@/*": ["./src/*"]
     }
