@@ -9,6 +9,14 @@
 
 A well-structured, production-ready Vue 3 template designed for modern web development with AI assistance. This template comes pre-configured with TypeScript, strict type checking, comprehensive testing setup, and opinionated tooling to accelerate your development workflow.
 
+# Vue AI Agent Skills
+
+官方 link：https://github.com/vuejs-ai/skills#
+
+```bash
+npx skills add vuejs-ai/skills
+```
+
 ## Features
 
 - Vue 3 with Composition API and `<script setup>` syntax
@@ -37,16 +45,16 @@ yarn preview
 
 ## Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `yarn dev` | Start development server with hot reload |
-| `yarn build` | Build for production (`vue-tsc` + `vite build`) |
-| `yarn preview` | Preview production build locally |
-| `yarn test` | Run tests in CLI mode |
-| `yarn test:ui` | Run tests with Vitest UI |
-| `yarn test:coverage` | Run tests with coverage report |
-| `yarn lint` | Lint and fix all source files |
-| `yarn format` | Format all source files with Prettier |
+| Command              | Description                                     |
+| -------------------- | ----------------------------------------------- |
+| `yarn dev`           | Start development server with hot reload        |
+| `yarn build`         | Build for production (`vue-tsc` + `vite build`) |
+| `yarn preview`       | Preview production build locally                |
+| `yarn test`          | Run tests in CLI mode                           |
+| `yarn test:ui`       | Run tests with Vitest UI                        |
+| `yarn test:coverage` | Run tests with coverage report                  |
+| `yarn lint`          | Lint and fix all source files                   |
+| `yarn format`        | Format all source files with Prettier           |
 
 ## Project Structure
 
@@ -97,6 +105,7 @@ TypeScript cannot handle type information for `.vue` imports by default. The `sr
 ### TypeScript
 
 This project uses TypeScript with the strictest configuration:
+
 - `strict: true` - All strict type-checking options enabled
 - `noUnusedLocals: true` - Report errors on unused locals
 - `noUnusedParameters: true` - Report errors on unused parameters
@@ -113,6 +122,7 @@ This project uses TypeScript with the strictest configuration:
 ### Testing
 
 Vitest is configured with:
+
 - jsdom environment for DOM testing
 - @testing-library/vue for component testing
 - Coverage reports with v8 provider
