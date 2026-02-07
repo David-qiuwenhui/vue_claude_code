@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Overview
 
 This is a Vue 3 + TypeScript + Vite template project optimized for AI-assisted development. The project uses:
+
 - **Vue 3** with Composition API and `<script setup>` syntax
 - **TypeScript** with strictest type checking enabled
 - **Vite** for build tooling and development server
@@ -42,24 +43,30 @@ yarn format
 ## Project Architecture
 
 ### Directory Structure
+
 - `src/components/` - Vue SFC components with `<script setup>` and TypeScript
 - `src/composables/` - Reusable composition functions
 - `src/test/` - Test configuration (setup.ts imports @testing-library/jest-dom)
 - `src/assets/` - Static assets (images, global styles)
 
 ### Path Aliases
+
 The `@` alias is configured to map to `./src/`. Use it for imports:
+
 ```ts
 import HelloWorld from '@/components/HelloWorld.vue'
 ```
 
 ### TypeScript Configuration
+
 - Project references: `tsconfig.json` includes `tsconfig.app.json` and `tsconfig.node.json`
 - Strictest mode enabled via `@tsconfig/strictest`
 - Vue types are handled through `src/vite-env.d.ts`
 
 ### Component Structure
+
 Components use `<script setup lang="ts">` with TypeScript interfaces for props and emits:
+
 ```vue
 <script setup lang="ts">
 interface Props {
@@ -76,6 +83,7 @@ defineEmits<Emits>()
 ```
 
 ### Testing
+
 - Component tests use `@vue/test-utils` with `mount()`
 - Tests are co-located with components in `__tests__` directories
 - Test utilities are globally available via `vitest.config.ts`
@@ -149,17 +157,16 @@ mkdir -p src/components src/composables src/test src/assets public log
 ### Step 3: Create Configuration Files
 
 **tsconfig.json:**
+
 ```json
 {
   "files": [],
-  "references": [
-    { "path": "./tsconfig.node.json" },
-    { "path": "./tsconfig.app.json" }
-  ]
+  "references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.app.json" }]
 }
 ```
 
 **tsconfig.app.json:**
+
 ```json
 {
   "extends": "@tsconfig/strictest/tsconfig.json",
@@ -189,6 +196,7 @@ mkdir -p src/components src/composables src/test src/assets public log
 ```
 
 **tsconfig.node.json:**
+
 ```json
 {
   "extends": "@tsconfig/node22/tsconfig.json",
@@ -205,6 +213,7 @@ mkdir -p src/components src/composables src/test src/assets public log
 ```
 
 **vite.config.ts:**
+
 ```ts
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -221,6 +230,7 @@ export default defineConfig({
 ```
 
 **vitest.config.ts:**
+
 ```ts
 import { defineConfig } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
@@ -247,6 +257,7 @@ export default defineConfig({
 ```
 
 **eslint.config.js:**
+
 ```js
 import js from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
@@ -291,6 +302,7 @@ export default [
 ```
 
 **.prettierrc:**
+
 ```json
 {
   "semi": false,
@@ -304,6 +316,7 @@ export default [
 ### Step 4: Create Core Files
 
 **index.html:**
+
 ```html
 <!doctype html>
 <html lang="en">
@@ -321,6 +334,7 @@ export default [
 ```
 
 **src/main.ts:**
+
 ```ts
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -329,6 +343,7 @@ createApp(App).mount('#app')
 ```
 
 **src/App.vue:**
+
 ```vue
 <script setup lang="ts">
 // Your root component logic
@@ -346,6 +361,7 @@ createApp(App).mount('#app')
 ```
 
 **src/vite-env.d.ts:**
+
 ```ts
 /// <reference types="vite/client" />
 
@@ -357,6 +373,7 @@ declare module '*.vue' {
 ```
 
 **src/test/setup.ts:**
+
 ```ts
 import '@testing-library/jest-dom/vitest'
 import { afterEach } from 'vitest'
@@ -386,13 +403,14 @@ yarn build
 ### Key Patterns to Remember
 
 1. **Component Props Pattern** - Always define props before using them:
+
 ```vue
 <script setup lang="ts">
 interface Props {
   modelValue: number
 }
 
-const props = defineProps<Props>()  // Assign to variable if needed
+const props = defineProps<Props>() // Assign to variable if needed
 </script>
 ```
 
@@ -424,11 +442,11 @@ The template includes examples in `src/composables/useVueUseExample.ts`:
 
 ```ts
 import {
-  useStorage,        // Reactive localStorage
-  useWindowSize,     // Window dimensions
-  useMouse,          // Mouse position
-  usePreferredDark,  // System dark mode preference
-  useNow             // Reactive current time
+  useStorage, // Reactive localStorage
+  useWindowSize, // Window dimensions
+  useMouse, // Mouse position
+  usePreferredDark, // System dark mode preference
+  useNow // Reactive current time
 } from '@vueuse/core'
 ```
 
@@ -449,18 +467,17 @@ const count = useStorage('count', 0)
 
 ### Popular VueUse Functions
 
-| Function | Description |
-|----------|-------------|
-| `useStorage` | Reactive localStorage/sessionStorage |
-| `useWindowSize` | Window width/height |
-| `useMouse` | Mouse position tracking |
-| `usePreferredDark` | System dark mode preference |
-| `useNow` | Reactive current date/time |
-| `useClipboard` | Clipboard API |
-| `useFetch` | Reactive fetch with abort |
-| `useElementSize` | Element size observation |
-| `useScroll` | Scroll position |
-| `useIntersectionObserver` | Intersection Observer |
+| Function                  | Description                          |
+| ------------------------- | ------------------------------------ |
+| `useStorage`              | Reactive localStorage/sessionStorage |
+| `useWindowSize`           | Window width/height                  |
+| `useMouse`                | Mouse position tracking              |
+| `usePreferredDark`        | System dark mode preference          |
+| `useNow`                  | Reactive current date/time           |
+| `useClipboard`            | Clipboard API                        |
+| `useFetch`                | Reactive fetch with abort            |
+| `useElementSize`          | Element size observation             |
+| `useScroll`               | Scroll position                      |
+| `useIntersectionObserver` | Intersection Observer                |
 
 For complete documentation, see [vueuse.org](https://vueuse.org/).
-
